@@ -226,16 +226,18 @@ section {
 }
 
 .about-container {
-    width: 75%;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 75%; */
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
         "about-me about-me"
-        "web-skills design-skills";
-    padding: 30px;
+        "web-skills design-skills"; */
+    padding: 100px;
 
 }
 
@@ -245,6 +247,7 @@ section {
 }
 
 .about-me {
+    width: 70%;
     grid-area: about-me;
     color: #F2F2F2;
     font-size: 20px;
