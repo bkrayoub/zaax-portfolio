@@ -7,13 +7,15 @@ let allImages = document.querySelectorAll('img')
 let menuOpened = false
 
 
-
-discover.addEventListener('mouseover', function(){
-    buttonHoverBg.style.width = '97%'
-})
-discover.addEventListener('mouseleave', function(){
-    buttonHoverBg.style.width = '3%'
-})
+function buttonanimate(e) {
+    discover.addEventListener('mouseover', function(){
+        e.style.width = '97%'
+    })
+    discover.addEventListener('mouseleave', function(){
+        e.style.width = '3%'
+    })
+}
+buttonanimate(buttonHoverBg)
 
 menuBtn.addEventListener('click', () => {
     if (menuOpened) {
