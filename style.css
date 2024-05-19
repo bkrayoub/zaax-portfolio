@@ -46,6 +46,7 @@ section {
 }
 
 .navbar {
+    border-radius: 1000px;
     position: absolute;
     z-index: 9999999;
     height: 40px;
