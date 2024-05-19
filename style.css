@@ -5,6 +5,10 @@
     src: url("PLANK__.TTF");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #1a1a1a;
     margin: 0;
@@ -25,6 +29,7 @@ body {
     font-family: "planet_cosmos";
     z-index: 9999999;
     font-weight: 400;
+    font-size: 5vw !important;
 }
 
 section {
@@ -38,6 +43,52 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.navbar {
+    position: absolute;
+    z-index: 9999999;
+    height: 40px;
+    width: 50vw;
+    top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    background-color: #1a1a1a;
+}
+
+.navbar>a {
+    color: #F2F2F2;
+    text-decoration: none;
+    position: relative;
+    font-size: 1vw;
+}
+
+.navbar>a::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    background-color: #F2F2F2;
+}
+
+.navbar>a::after {
+    content: "";
+    width: 10%;
+    height: 3px;
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    transition: .33s ease-in;
+    background-color: #F97D39;
+}
+
+.navbar>a:hover::after {
+    width: 95%;
 }
 
 #discover {
@@ -252,7 +303,7 @@ section {
     width: 70%;
     grid-area: about-me;
     color: #F2F2F2;
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 .web-skills {
@@ -271,9 +322,14 @@ section {
     top: -35px;
 }
 
+.skills-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .progress_lines {
-    width: 200px;
-    height: 10px;
+    width: 150px;
+    height: 5px;
     background-color: #F2F2F2;
 }
 
@@ -281,7 +337,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin: 15px;
 }
 
 .profress_line_container p {
@@ -292,11 +348,26 @@ section {
 .design-skills {
     color: #F2F2F2;
     text-transform: uppercase;
+    font-size: 1.5vw;
 }
 
 .web-skills>h3,
 .design-skills>h3 {
     color: #F97D39;
+    position: relative;
+}
+
+.about-container h3 {
+    position: relative;
+}
+
+.about-container h3::after {
+    position: absolute;
+    background-color: #F2F2F2;
+    left: -5px;
+    height: 100%;
+    width: 5px;
+    z-index: 9999;
 }
 
 .progress_lines,
@@ -347,25 +418,30 @@ section {
 .project_photo {
     height: 90%;
     width: 100%;
-    background-color: #1a1a1a;
-    background-image: url('images/bg.png');
-    background-size: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition: .33s ease-out;
     filter: brightness(85%);
-
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.project_photo:hover {
-    background-size: 105%;
+
+.project_photo>img {
+    position: absolute;
+    height: 100%;
+    transition: .33s ease-out;
+}
+
+.project_photo>img:hover {
+    scale: 105%;
     filter: brightness(100%);
 }
 
 .project_name {
-    font-size: 20px;
-    padding: 10px;
+    font-size: 1.2vw;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 #myProjectTitle {
@@ -375,6 +451,7 @@ section {
 }
 
 .pagination {
+    z-index: 9999;
     position: absolute;
     bottom: 25px;
     right: 45px;
@@ -385,6 +462,7 @@ section {
     width: fit-content;
     font-weight: bold;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .pagination img {
@@ -397,11 +475,11 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .background4 {
-    
+
     width: 100%;
     height: 100%;
     position: absolute;
@@ -457,12 +535,11 @@ section {
     width: 60%;
     text-align: center;
     color: #F2F2F2;
-    margin: 50px 0px;
+    margin: 20px 0px;
 }
 
 .section4 .title {
     color: #F97D39;
-    font-size: 56px;
     position: absolute;
     top: -50px;
     display: flex;
@@ -482,37 +559,39 @@ section {
     font-family: "planet_cosmos";
     color: #F97D39;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 1.5vw;
     text-align: center;
+}
+
+.textSection4 p {
+    font-size: 1.5vw;
 }
 
 .pricingCards {
     display: flex;
-    justify-content: space-between;
-    width: 90%;
+    justify-content: space-evenly;
+    width: 100%;
     z-index: 999;
-    height: 100%;
 }
 
 .priceCard {
     color: #F2F2F2;
     border: solid #515151 2px;
     text-align: center;
-    width: 25%;
-    height: 80%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+
 }
 
 .priceCard>img {
     position: absolute;
     z-index: -1;
-    width: 100%;
 }
+
 .priceCard>#stansGap {
     width: 100%;
     transition: .4s ease-out;
@@ -521,6 +600,7 @@ section {
     flex-direction: column;
     justify-content: end;
 }
+
 .priceCard #line {
     width: 100%;
     height: 5px;
@@ -540,12 +620,15 @@ section {
     overflow: hidden;
     background-color: #303030;
 }
+
 #cardDetails>ul>li {
     color: #F2F2F2;
     display: flex;
     margin: 0px 0px 5px 20px;
     align-items: center;
+    position: relative;
 }
+
 #cardDetails>ul>li::before {
     content: '';
     width: 5px;
@@ -553,13 +636,16 @@ section {
     background-color: #F2F2F2;
     position: absolute;
     z-index: 999;
-    left: 5px;
+    left: -10px;
+    top: 5px;
     rotate: 45deg;
 }
+
 #cardDetails>a {
     text-decoration: none;
 
 }
+
 #cardDetails>a>button {
     display: flex;
     cursor: pointer;
@@ -574,6 +660,7 @@ section {
     border: none;
     color: #F2F2F2;
     font-size: 16px;
+    transition: .1s ease-in-out;
 }
 
 #cardDetails>a>button::before {
@@ -586,6 +673,7 @@ section {
     background-color: #F2F2F2;
     z-index: 9999;
 }
+
 #cardDetails>a>button::after {
     position: absolute;
     left: 3px;
@@ -597,6 +685,9 @@ section {
     z-index: 9999;
 }
 
+#cardDetails>a>button:hover {
+    background-color: #1a1a1a;
+}
 
 
 
@@ -605,4 +696,144 @@ section {
 
 .section5 {
     background-color: #F2F2F2;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.section5bg {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/lechiwerbg.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+}
+#lechiwer {
+    width: 70%;
+    position: absolute;
+    right: -300px;
+    bottom: -30px;
+}
+#blurBg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backdrop-filter: blur(5px); /* Apply a 20px blur to the backdrop */
+    backdrop-filter: blur(5px);
+}
+#contact {
+    z-index: 999999999;
+    background-color: #F2F2F2;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#contact form .inpContainer {
+    width: 80%;
+    position: relative;
+    transition: .33s ease-in-out;
+}
+#contact form>.inpContainer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: #1a1a1a;
+    height: 4px;
+    bottom: 5px;
+    display: block;
+}
+#contact form>.inpContainer::after {
+    content: "";
+    position: absolute;
+    width: 5%;
+    background-color: #F97D39;
+    height: 4px;
+    bottom: 5px;
+    display: block;
+    transition: .33s ease-in-out;
+
+}
+#contact form>.inpContainer:hover::after {
+    width: 10%;
+}
+#contact form>.inpContainer:focus-within:after {
+    width: 95%;
+}
+
+#contact form input {
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    margin: 10px 0;
+    outline: none;
+    font-size: 1.3vw;
+}
+#contact form input::placeholder {
+    color: #1a1a1a;
+}
+.submitContainer {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+} 
+.submitContainer button {
+    width: 15vw;
+    height: 8vh;
+    background-color: #F97D39;
+    border: 0px;
+    font-size: 2vh;
+    font-weight: bold;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    color: #F2F2F2;
+    transition: .1s ease-in-out;
+}
+
+.submitContainer button::before {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #F2F2F2;
+    z-index: 9999;
+}
+.submitContainer button::after {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #F2F2F2;
+    z-index: 9999;
+}
+.submitContainer button:hover {
+    background-color: #1a1a1a;
 }
