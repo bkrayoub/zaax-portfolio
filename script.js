@@ -46,18 +46,4 @@ menuBtn.addEventListener('click', () => {
         menuOpened = true
     }
 })
-document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
 
-        const targetId = this.getAttribute('href').substring(1); // Get the target id without '#'
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start' // Can be 'start', 'center', 'end', or 'nearest'
-            });
-        }
-    });
-});

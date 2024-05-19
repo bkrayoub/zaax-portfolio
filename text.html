@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scrolling with GSAP</title>
+    <!-- Include GSAP and ScrollToPlugin from CDN -->
+
+    <style>
+        /* Basic styles for sections */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #1a1a1a;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+    </div>
+
+    <section id="section1" style="background-color: lightcoral;">Section 1</section>
+    <section id="section2" style="background-color: lightseagreen;">Section 2</section>
+    <section id="section3" style="background-color: lightblue;">Section 3</section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all anchor links with hashes
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Use GSAP to scroll to the target element
+                    gsap.to(window, {duration: 2, scrollTo: {y: this.getAttribute('href'), offsetY: 0 }});
+                });
+            });
+        });
+    </script>
+</body>
+</html>
