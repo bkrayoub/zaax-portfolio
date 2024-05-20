@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
+    <script src="
+https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js
+"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js" integrity="sha512-0zGLOFv/+OQ6YfVCSGDQWhrDRx0ONmBqWvs3gI4olm8i6xtKoG1FhEnB4eTaWCVnojyfUDgE8Izeln+mAJAkFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"
+        integrity="sha512-0zGLOFv/+OQ6YfVCSGDQWhrDRx0ONmBqWvs3gI4olm8i6xtKoG1FhEnB4eTaWCVnojyfUDgE8Izeln+mAJAkFA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
@@ -33,13 +37,13 @@
             <img src="images/Vector 13.svg" id="vector1" draggable="false">
             <img src="images/Vector 13.svg" id="vector2" draggable="false">
             <img src="images/zaaxavatar.png" id="zikoavatar" draggable="false">
-            <div id="noise"></div>
             <img src="images/zaaxparagraph.svg" id="zaaxpara" draggable="false">
             <div class="grid-bg">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+            <div id="noise"></div>
         </div>
 
         <div id="menuList">
@@ -313,30 +317,30 @@
         </div>
         <div id="copyrights">
             <div>
-                <p>© 2024 <span><a href="">ZAAX.</a></span>  All rights reserved</p>
+                <p>© 2024 <span><a href="">ZAAX.</a></span> All rights reserved</p>
                 <p>Terms of use</p>
                 <p>Privacy Policy</p>
             </div>
             <p>DESIGN COLLABRATED WITH <span><a href="">TY4</a></span></p>
         </div>
     </footer>
-    
+
 
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Select all anchor links with hashes
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
 
                     // Use GSAP to scroll to the target element
-                    gsap.to(window, {duration: 2, scrollTo: {y: this.getAttribute('href'), offsetY: 0 }, ease: "back"});
+                    gsap.to(window, { duration: 2, scrollTo: { y: this.getAttribute('href'), offsetY: 0 }, ease: "back" });
                 });
             });
         });
     </script>
-        <script src="script/script.js"></script>
+    <script src="script/script.js"></script>
 
 </body>
 

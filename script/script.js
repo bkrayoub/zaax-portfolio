@@ -1,3 +1,8 @@
+
+
+
+
+
 let menuBtn = document.getElementById('menuBtn')
 let menuList = document.getElementById('menuList')
 let discover = document.getElementById('discover')
@@ -59,14 +64,14 @@ document.addEventListener('mousemove', (e) => {
 
     // Use GSAP to animate the character's position
     gsap.to(character, {
-        x: mouseX * -0.004, // Adjust this value as needed
-        y: mouseY * -0.004, // Adjust this value as needed
+        x: mouseX * -0.007, // Adjust this value as needed
+        y: mouseY * -0.007, // Adjust this value as needed
         duration: 0.5, // Animation duration
         ease: 'power2.out' // Easing function for smooth animation
     });
     gsap.to(typotext, {
-        x: mouseX * -0.007, // Adjust this value as needed
-        y: mouseY * -0.007, // Adjust this value as needed
+        x: mouseX * 0.003, // Adjust this value as needed
+        y: mouseY * 0.003, // Adjust this value as needed
         duration: 0.5, // Animation duration
         ease: 'power2.out' // Easing function for smooth animation
     });
@@ -77,71 +82,28 @@ document.addEventListener('mousemove', (e) => {
 
 class App {
     constructor() {
-        this._inti();
-        this._render();
-    }    
-    _inti() {
-        this._createlenis()
+      this._init();
+      this._render = this._render.bind(this); // Ensure `this` context is correct for _render
+      this._render();
     }
-    _createlenis() {
-        this._lenis = new lenis({
-            lerp: 0.1
-        })
-    }
-    _render(time) {
-        this._lenis.raf(time)
-
-        requestAnimationFrame(this._render.bind(this))
-    }
-}
-
-new App();
-
-
-
-
-////////////////////////////////////////////////////////////////////////////
-
-
-
-let cols, rows;
-let scl = 20;
-let w, h;
-let noiseGrid = [];
-
-function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('noise');
   
-  w = windowWidth;
-  h = windowHeight;
-  cols = w / scl;
-  rows = h / scl;
-
-  for (let y = 0; y < rows; y++) {
-    noiseGrid[y] = [];
-    for (let x = 0; x < cols; x++) {
-      noiseGrid[y][x] = noise(x * 0.1, y * 0.1);
+    _init() {
+      this._createLenis();
+    }
+  
+    _createLenis() {
+      this._lenis = new Lenis({
+        lerp: 0.1
+      });
+    }
+  
+    _render(time) {
+      this._lenis.raf(time);
+      requestAnimationFrame(this._render);
     }
   }
-}
-
-function draw() {
-  clear();
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
-      let c = noiseGrid[y][x] * 255;
-      fill(c);
-      noStroke();
-      rect(x * scl, y * scl, scl, scl);
-    }
-  }
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  w = windowWidth;
-  h = windowHeight;
-  cols = w / scl;
-  rows = h / scl;
-}
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    new App();
+  });
+  
