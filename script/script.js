@@ -93,7 +93,7 @@ class App {
   
     _createLenis() {
       this._lenis = new Lenis({
-        lerp: 0.1
+        lerp: 0.3
       });
     }
   
@@ -107,3 +107,16 @@ class App {
     new App();
   });
   
+
+
+
+  gsap.to(".movingTxt", {
+    scrollTrigger:{
+
+        trigger: ".movingTxt", 
+        start: "top center", 
+        end: "bottom top", 
+        scrub: 1
+    },
+    y: 200
+})

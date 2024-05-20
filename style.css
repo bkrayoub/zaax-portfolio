@@ -276,9 +276,8 @@ section {
     position: absolute;
 }
 
-.section2 #background2 #purpose {
+.section2 #background2 .purpose {
     width: 100%;
-    transform: translateY(0);
 }
 
 .section2 #background2 #fox-background2 {
