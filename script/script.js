@@ -94,7 +94,7 @@ class App {
   
     _createLenis() {
       this._lenis = new Lenis({
-        lerp: 0.1
+        lerp: 0.3
       });
     }
   
