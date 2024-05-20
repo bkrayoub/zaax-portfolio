@@ -11,6 +11,7 @@ let stansGap = document.getElementById('stansGap')
 let cardDetails = document.getElementById('cardDetails')
 let buttonHoverBg = document.getElementById('buttonHoverBg')
 let allImages = document.querySelectorAll('img')
+let movingTxt = document.getElementsByClassName('movingTxt')
 
 let menuOpened = false
 
@@ -110,13 +111,25 @@ class App {
 
 
 
-  gsap.to(".movingTxt", {
-    scrollTrigger:{
+  gsap.registerPlugin(ScrollTrigger);
 
-        trigger: ".movingTxt", 
-        start: "top center", 
-        end: "bottom top", 
-        scrub: 1
-    },
-    y: 200
-})
+  
+  gsap.to('.movingTxt1', {
+      scrollTrigger: {
+          trigger: '.movingTxt1', 
+          start: "top right", 
+          end: "bottom top", 
+          scrub: 1
+      },
+      y: 100
+  });
+
+  gsap.to('.movingTxt2', {
+      scrollTrigger: {
+          trigger: '.movingTxt2', 
+          start: "top right", 
+          end: "bottom top", 
+          scrub: 1
+      },
+      y: 100
+  });
