@@ -129,7 +129,7 @@ class App {
           trigger: '.movingTxt2', 
           start: "top right", 
           end: "bottom top", 
-          scrub: 1
+          scrub: 2
       },
       y: 100
   });

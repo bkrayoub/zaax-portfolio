@@ -406,7 +406,10 @@ section {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+}
+#zaaxzaax {
+    width: 80%;
 }
 .movingTxt {
     position: absolute;
