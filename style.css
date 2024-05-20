@@ -45,6 +45,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .navbar {
@@ -61,7 +62,11 @@ section {
     font-weight: bolder;
     background-color: #1a1a1a;
 }
-
+#id {
+    width: 100%;
+    height: 100%;
+    z-index: 5463454134;
+}
 .navbar>a {
     color: #F2F2F2;
     text-decoration: none;
@@ -168,7 +173,7 @@ section {
 }
 
 #background1 #zikoavatar {
-    bottom: 0px;
+    bottom: -10px;
     height: 90%;
     z-index: 10000;
 }
@@ -272,6 +277,7 @@ section {
 
 .section2 #background2 #purpose {
     width: 100%;
+    transform: translateY(0);
 }
 
 .section2 #background2 #fox-background2 {
